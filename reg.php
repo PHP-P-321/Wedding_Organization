@@ -38,11 +38,11 @@ session_start();
         </div>
     </form>
     <?php
-    if(empty($_SESSION['errLogin'])) {
+    if(empty($_SESSION['errReg'])) {
         echo "";
     } else {
         echo "<br>";
-        echo $_SESSION['errLogin'];
+        echo $_SESSION['errReg'];
         echo "<br>";
     }
     session_destroy();
