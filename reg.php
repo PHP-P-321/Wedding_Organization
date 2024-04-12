@@ -12,29 +12,29 @@ session_start();
 </head>
 <body>
     <h2>Регистрация</h2>
-    <form action="./vendor/reg.php" method="post" class="auth_form">
-        <div class="auth_form_item">
+    <form action="./vendor/reg.php" method="post" class="reg_form">
+        <div class="reg_form_item">
             <p>Email</p>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="reg_form_item">
+            <p>ФИО</p>
+            <input type="text" name="fullname" placeholder="ФИО" required>
+        </div>
+        <div class="reg_form_item">
+            <p>Логин</p>
             <input type="text" name="login" placeholder="Логин" required>
         </div>
-        <div class="auth_form_item">
-            <p>ФИО</p>
-            <input type="text" placeholder="ФИО" name="fullname" required>
-        </div>
-        <div class="auth_form_item">
-            <p>Логин</p>
-            <input type="text" placeholder="Логин" name="login" required>
-        </div>
-        <div class="auth_form_item">
+        <div class="reg_form_item">
             <p>Пароль</p>
-            <input type="password" placeholder="Пароль" name="password" required>
+            <input type="password" name="password" placeholder="Пароль" required>
         </div>
-        <div class="auth_form_item">
+        <div class="reg_form_item">
             <p>Подтверждение Пароля</p>
-            <input type="password" placeholder="Пароль" name="access_password" required>
+            <input type="password" name="access_password" placeholder="Пароль" required>
         </div>
-        <div class="auth_form_button">
-            <input type="submit" value="Войти">
+        <div class="reg_form_button">
+            <input type="submit" value="Зарегистрироваться">
         </div>
     </form>
     <?php
