@@ -44,3 +44,19 @@ body {
 .button:hover {
     background-color: darkslategray;
 }
+.requests {
+    padding: 15px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.request {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: bisque;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 5px;
+}
