@@ -94,3 +94,10 @@ $(document).ready(function(){
         });
     });
 });
+
+$(document).ready(function(){
+    $('.open-close').click(function(){
+        $(this).toggleClass('closed');
+        $(this).next('.create_request_item-wrap').toggle();
+    });
+});

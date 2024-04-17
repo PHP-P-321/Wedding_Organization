@@ -17,7 +17,30 @@ body {
     padding: 30px;
 }
 .create_request_item {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+.open-close::before {
+    content: '+';
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.open-close.closed::before {
+    content: '-';
+}
+.button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkseagreen;
+    color: #fff;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: darkslategray;
 }
