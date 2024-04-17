@@ -7,6 +7,11 @@ if(empty($_COOKIE['id_user'])) {
     header("Location: ./login.php");
 }
 
+require_once("./db/db.php"); // Подключаем файл с настройками базы данных
+
+$select_staff = mysqli_query($connect, "SELECT * FROM `staff` ORDER BY `id` DESC");
+$select_staff = mysqli_fetch_all($select_staff);
+
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +27,7 @@ if(empty($_COOKIE['id_user'])) {
     <a href="./logout.php">Выйти</a>
     <?php if($_COOKIE['role'] == 1) { ?>
         <br><br>
-        <a href="#!">Записи</a>
+        <a href="./requests.php">Записи</a>
         <h2>Добавить Визажиста</h2>
         <form action="./vendor/create-makeup_artist.php" method="post" class="create-makeup_artist">
             <div class="create_request_item">
@@ -61,10 +66,13 @@ if(empty($_COOKIE['id_user'])) {
                 <div class="create_request_item-wrap">
                     <p>Выбор Визажиста</p>
                     <div class="dropdown">
+                    
                         <select class="old-select" name="makeup_artist" required>
-                            <option value="id_1">Визажист 1</option>
-                            <option value="id_1">Визажист 2</option>
-                            <option value="id_1">Визажист 3</option>
+                            <?php foreach ($select_staff as $item) { 
+                                if($item[1] == 1) { ?>
+                                    <option value="<?= $item[0] ?>"><?= $item[2] ?></option>
+                                <?php }
+                            } ?>
                         </select>
                         <div class="new-select">
                             <div class="selection">
@@ -123,9 +131,9 @@ if(empty($_COOKIE['id_user'])) {
                     <p>Выбор размера платья</p>
                     <div class="dropdown">
                         <select class="old-select" name="female_clothes" required>
-                            <option value="0">Размер 0</option>
-                            <option value="2">Размер 2</option>
-                            <option value="4">Размер 4</option>
+                            <option value="Размер 0">Размер 0</option>
+                            <option value="Размер 2">Размер 2</option>
+                            <option value="Размер 4">Размер 4</option>
                         </select>
                         <div class="new-select">
                             <div class="selection">
@@ -141,9 +149,9 @@ if(empty($_COOKIE['id_user'])) {
                     <p>Выбор размера костюма</p>
                     <div class="dropdown">
                         <select class="old-select" name="male_clothes" required>
-                            <option value="44">Размер 44</option>
-                            <option value="46">Размер 46</option>
-                            <option value="48">Размер 48</option>
+                            <option value="Размер 44">Размер 44</option>
+                            <option value="Размер 46">Размер 46</option>
+                            <option value="Размер 48">Размер 48</option>
                         </select>
                         <div class="new-select">
                             <div class="selection">
@@ -162,9 +170,11 @@ if(empty($_COOKIE['id_user'])) {
                 <p>Выбор тамады</p>
                 <div class="dropdown">
                     <select class="old-select" name="tamada" required>
-                        <option value="tamada_1">Тамада 1</option>
-                        <option value="tamada_2">Тамада 2</option>
-                        <option value="tamada_3">Тамада 3</option>
+                        <?php foreach ($select_staff as $item) { 
+                            if($item[1] == 2) { ?>
+                                <option value="<?= $item[0] ?>"><?= $item[2] ?></option>
+                            <?php }
+                        } ?>
                     </select>
                     <div class="new-select">
                         <div class="selection">
@@ -182,9 +192,9 @@ if(empty($_COOKIE['id_user'])) {
                 <p>Выбор места</p>
                 <div class="dropdown">
                     <select class="old-select" name="place" required>
-                        <option value="place_1">Место 1</option>
-                        <option value="place_2">Место 2</option>
-                        <option value="place_3">Место 3</option>
+                        <option value="Место 1">Место 1</option>
+                        <option value="Место 2">Место 2</option>
+                        <option value="Место 3">Место 3</option>
                     </select>
                     <div class="new-select">
                         <div class="selection">
