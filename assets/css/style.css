@@ -1,1 +1,23 @@
 @import url("./reset.css");
+@import url("./input.css");
+@import url("./select.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.create_request {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 500px;
+    background-color: cadetblue;
+    padding: 30px;
+}
+.create_request_item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
