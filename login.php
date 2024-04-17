@@ -13,16 +13,20 @@ session_start();
 <body>
     <h2>Авторизация</h2>
     <form action="./vendor/login.php" method="post" class="auth_form">
-        <div class="auth_form_item">
-            <p>Логин</p>
-            <input type="text" name="login" placeholder="Логин" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="text" name="login" id="login" placeholder="aaa" required>
+                <label class="text-field__label" for="login">Логин</label>
+            </div>
         </div>
-        <div class="auth_form_item">
-            <p>Пароль</p>
-            <input type="password" placeholder="Пароль" name="password" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="password" name="password" id="password" placeholder="aaa" required>
+                <label class="text-field__label" for="password">Пароль</label>
+            </div>
         </div>
         <div class="auth_form_button">
-            <input type="submit" value="Войти">
+            <input type="submit" value="Войти" class="button">
         </div>
     </form>
     <?php
@@ -38,6 +42,6 @@ session_start();
     <a href="./reg.php">Зарегистрироваться</a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/script/main.js"></script>
 </body>
 </html>

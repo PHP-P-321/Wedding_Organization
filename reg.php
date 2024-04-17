@@ -13,28 +13,38 @@ session_start();
 <body>
     <h2>Регистрация</h2>
     <form action="./vendor/reg.php" method="post" class="reg_form">
-        <div class="reg_form_item">
-            <p>Email</p>
-            <input type="email" name="email" placeholder="Email" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="email" name="email" id="email" placeholder="aaa" required>
+                <label class="text-field__label" for="email">Email</label>
+            </div>
         </div>
-        <div class="reg_form_item">
-            <p>ФИО</p>
-            <input type="text" name="fullname" placeholder="ФИО" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="text" name="fullname" id="fullname" placeholder="aaa" required>
+                <label class="text-field__label" for="fullname">ФИО</label>
+            </div>
         </div>
-        <div class="reg_form_item">
-            <p>Логин</p>
-            <input type="text" name="login" placeholder="Логин" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="text" name="login" id="login" placeholder="aaa" required>
+                <label class="text-field__label" for="login">Логин</label>
+            </div>
         </div>
-        <div class="reg_form_item">
-            <p>Пароль</p>
-            <input type="password" name="password" placeholder="Пароль" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="password" name="password" id="password" placeholder="aaa" required>
+                <label class="text-field__label" for="password">Пароль</label>
+            </div>
         </div>
-        <div class="reg_form_item">
-            <p>Подтверждение Пароля</p>
-            <input type="password" name="access_password" placeholder="Пароль" required>
+        <div class="create_request_item">
+            <div class="text-field text-field_floating">
+                <input class="text-field__input" type="password" name="access_password" id="access_password" placeholder="aaa" required>
+                <label class="text-field__label" for="access_password">Подтверждение Пароля</label>
+            </div>
         </div>
         <div class="reg_form_button">
-            <input type="submit" value="Зарегистрироваться">
+            <input type="submit" value="Зарегистрироваться" class="button">
         </div>
     </form>
     <?php
