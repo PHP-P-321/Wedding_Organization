@@ -20,7 +20,7 @@ if ($password == $access_password) {
         mysqli_query($connect, "INSERT INTO `users`
                                 (`role`, `login`, `email`, `fullname`, `password`)
                                 VALUES
-                                (3, '$login', '$email', '$fullname', '$pass_hash')");
+                                (2, '$login', '$email', '$fullname', '$pass_hash')");
         header("Location: ../login.php");
     }
 } else {
